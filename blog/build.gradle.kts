@@ -8,6 +8,13 @@ plugins {
     kotlin("plugin.jpa") version "1.3.72"
     id("org.jlleitschuh.gradle.ktlint") version "9.3.0"
     id("org.jlleitschuh.gradle.ktlint-idea") version "9.3.0"
+    kotlin("plugin.allopen") version "1.3.61"
+}
+
+allOpen {
+    annotation("javax.persistence.Entity")
+    annotation("javax.persistence.Embeddable")
+    annotation("javax.persistence.MappedSuperclass")
 }
 
 group = "com.example"
