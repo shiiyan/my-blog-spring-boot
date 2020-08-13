@@ -1,6 +1,5 @@
 package com.example.blog
 
-import blog.Article
 import blog.ArticleRepository
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
