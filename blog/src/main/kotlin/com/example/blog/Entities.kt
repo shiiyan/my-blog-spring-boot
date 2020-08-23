@@ -5,21 +5,22 @@ import javax.persistence.*
 
 @Entity
 data class Article(
-    val title: String,
-    val headline: String,
-    val content: String,
+    var title: String,
+    var headline: String,
+    var content: String,
     @ManyToOne
     @JoinColumn
-    val author: User,
-    @Id @GeneratedValue val id: Long? = null,
-    val addedAt: LocalDateTime = LocalDateTime.now()
+    var author: User,
+    var slug: String = title.toSlug(),
+    var addedAt: LocalDateTime = LocalDateTime.now(),
+    @Id @GeneratedValue var id: Long? = null
 )
 
 @Entity
 data class User(
-    val login: String,
-    val firstName: String,
-    val lastName: String,
-    val description: String? = null,
-    @Id @GeneratedValue val id: Long? = null
+    var login: String,
+    var firstName: String,
+    var lastName: String,
+    var description: String? = null,
+    @Id @GeneratedValue var id: Long? = null
 )
